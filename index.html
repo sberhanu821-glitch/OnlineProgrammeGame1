@@ -1,0 +1,254 @@
+<html id="space"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></html>
+<script src="resources1.js"></script>
+<script>
+    function wait(ms) {
+          return new Promise(resolve => setTimeout(resolve, ms));
+    }let TimeOut=false
+    let win
+    let language
+    let progress
+    let space=document.getElementById("space")
+    space.style.backgroundColor="black"
+    space.innerHTML="<div style='color: white; position: absolute; top: 30%; text-align: center; font-size: 150%;'><p>Game prepared by</p><p>2018 EBENZER CHRISTIAN FELLOWSHIP</p><button id='start' style='font-size: 150%;'>Start Game</button></div>"
+    document.getElementById("start").addEventListener("click",async function(){
+        space.innerHTML=""
+        await wait(1000)
+        space.innerHTML="<head><meta name='viewport' content='width=device-width, initial-scale=1.0'><meta charset='UTF-8'></head><div style='position: absolute; top: 30%; font-size: 150%; color: white;'><p>In what language would you like to play?</p><button id='english' class='language' style='font-size: 150%'>English</button><br><br><button class='language' id='amharic' style='font-size: 150%;'>አማረኛ</button></div>"
+        for (const lang of document.querySelectorAll('.language')){
+            lang.addEventListener("click",async function(){
+                language=lang.getAttribute("id")
+                await wait(500)
+                if (language=='english'){
+                    space.innerHTML="<head><meta charset='UTF-8' ><meta name='viewport' content='width=device-width, initial-scale=1.0'></head><div id='phase' style='position: absolute; top: 30%; font-size: 150%; color: white; font-family: `Arial`, sans-serif;'><p>Phase One</p></div>"
+                }else if (language=='amharic'){
+                    space.innerHTML="<head><meta charset='UTF-8' ><meta name='viewport' content='width=device-width, initial-scale=1.0'></head><div id='phase' style='position: absolute; top: 30%; font-size: 150%; color: white; font-family: `Arial`, sans-serif;'><p>አንደኛ ደረጃ</p></div>"
+                }await wait(1500)
+                if (language=='english'){
+                   document.getElementById("phase").innerHTML=document.getElementById("phase").innerHTML.concat("<p>The creation of the world</p>")
+                }else if (language=='amharic'){
+                    document.getElementById("phase").innerHTML=document.getElementById("phase").innerHTML.concat("<p>የአለም መፈጠር</p>")
+                }await wait(1500)
+                phaseOne()
+            })
+        }
+    })
+    function phaseOne(){
+        progress="phaseOne"
+        space.style.backgroundColor="white"
+        space.innerHTML=`
+        <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<h1 style="color: black; text-decoration: underline; font-size: 150%; position: absolute; top: 0%; height: 10%; text-align: center;">The Creation Of The World </h1>
+<p style="background: white; z-index: 1000; border: solid; position: fixed; top: 6%; font-size: 120%;"><a id="minute">0</a>:<a id="second">00</a></p>
+<p id="help" style="background: white; z-index: 1000; color: blue; text-decoration: underline; position: fixed; top: 6%; left: 75%;">Need Help?</p>
+<img id="ONE" style="background: black; position: absolute; top: 27.5%; width: 15vh; height: 15vh;">
+<img id="TWO" style="background: black; position: absolute; top: 65%; width: 15vh; height: 15vh;">
+<img id="THREE" style="background: black; position: absolute; top: 103.5%; width: 15vh; height: 15vh;">
+<img id="FOUR" style="background: black; position: absolute; top: 136.5%; width: 15vh; height: 15vh;">
+<img id="FIVE" style="background: black; position: absolute; top: 172.5%; width: 15vh; height: 15vh;">
+<img id="SIX" style="background: black; position: absolute; top: 207.5%; width: 15vh; height: 15vh;">
+<p style="position: absolute; top: 15%; height: 2%;">The First Day</p>
+<form class="choose" style="border: solid; position: absolute; top: 22.5%; left: 17vh; height: 30%;">
+    <label><input type="radio" name="one" value="light">Light</label><br>
+    <label><input type="radio" name="one" value="man">Land Animals & Man</label><br>
+    <label><input type="radio" name="one" value="sky">The Sky</label><br>
+    <label><input type="radio" name="one" value="bird">Sea Animals & Winged Creatures</label><br>
+    <label><input type="radio" name="one" value="plant">Land, Sea & Plants</label><br>
+    <label><input type="radio" name="one" value="sun">Sun, Moon & The Stars</label><br>
+</form>
+<p style="position: absolute; top: 50%; height: 2%;">The Second Day</p>
+<form class="choose" style="border: solid; position: absolute; top: 57.5%; left: 17vh; height: 30%;">
+    <label><input type="radio" name="two" value="light">Light</label><br>
+    <label><input type="radio" name="two" value="man">Land Animals & Man</label><br>
+    <label><input type="radio" name="two" value="sky">The Sky</label><br>
+    <label><input type="radio" name="two" value="bird">Sea Animals & Winged Creatures</label><br>
+    <label><input type="radio" name="two" value="plant">Land, Sea & Plants</label><br>
+    <label><input type="radio" name="two" value="sun">Sun, Moon & The Stars</label><br>
+</form>
+<p style="position: absolute; top: 85%; height: 2%;">The Third Day</p>
+<form class="choose" style="border: solid; position: absolute; top: 93%; left: 17vh; height: 30%;">
+    <label><input type="radio" name="three" value="light">Light</label><br>
+    <label><input type="radio" name="three" value="man">Land Animals & Man</label><br>
+    <label><input type="radio" name="three" value="sky">The Sky</label><br>
+    <label><input type="radio" name="three" value="bird">Sea Animals & Winged Creatures</label><br>
+    <label><input type="radio" name="three" value="plant">Land, Sea & Plants</label><br>
+    <label><input type="radio" name="three" value="sun">Sun, Moon & The Stars</label><br>
+</form>
+<p style="position: absolute; top: 121%; height: 2%;">The Fourth Day</p>
+<form class="choose" style="border: solid; position: absolute; top: 129%; left: 17vh; height: 30%;">
+    <label><input type="radio" name="four" value="light">Light</label><br>
+    <label><input type="radio" name="four" value="man">Land Animals & Man</label><br>
+    <label><input type="radio" name="four" value="sky">The Sky</label><br>
+    <label><input type="radio" name="four" value="bird">Sea Animals & Winged Creatures</label><br>
+    <label><input type="radio" name="four" value="plant">Land, Sea & Plants</label><br>
+    <label><input type="radio" name="four" value="sun">Sun, Moon & The Stars</label><br>
+</form>
+<p style="position: absolute; top: 157%; height: 2%;">The Fifth Day</p>
+<form class="choose" style="border: solid; position: absolute; top: 165%; left: 17vh; height: 30%;">
+    <label><input type="radio" name="five" value="light">Light</label><br>
+    <label><input type="radio" name="five" value="man">Land Animals & Man</label><br>
+    <label><input type="radio" name="five" value="sky">The Sky</label><br>
+    <label><input type="radio" name="five" value="bird">Sea Animals & Winged Creatures</label><br>
+    <label><input type="radio" name="five" value="plant">Land, Sea & Plants</label><br>
+    <label><input type="radio" name="five" value="sun">Sun, Moon & The Stars</label><br>
+</form>
+<p style="position: absolute; top: 193%; height: 2%;">The Sixth Day</p>
+<form class="choose" style="border: solid; position: absolute; top: 200%; left: 17vh; height: 30%;">
+    <label><input type="radio" name="six" value="light">Light</label><br>
+    <label><input type="radio" name="six" value="man">Land Animals & Man</label><br>
+    <label><input type="radio" name="six" value="sky">The Sky</label><br>
+    <label><input type="radio" name="six" value="bird">Sea Animals & Winged Creatures</label><br>
+    <label><input type="radio" name="six" value="plant">Land, Sea & Plants</label><br>
+    <label><input type="radio" name="six" value="sun">Sun, Moon & The Stars</label><br>
+</form>
+<div id="Alert" style="background: white; box-shadow: 0 0 10px gray; position: fixed; z-index: 1000; top: 10vh; left: 10vw; overflow: auto;"></div>`
+        if (language=="amharic"){
+            space.innerHTML=`
+            <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<h1 style="color: black; text-decoration: underline; font-size: 150%; position: absolute; top: 0%; height: 10%; text-align: center;">የአለም አፈጣጠር</h1>
+<p style="background: white; z-index: 1000; border: solid; position: fixed; top: 6%; font-size: 120%;"><a id="minute">0</a>:<a id="second">00</a></p>
+<p id="help" style="background: white; z-index: 1000; color: blue; text-decoration: underline; position: fixed; top: 6%; left: 75%;">ፍንጭ ይፈልጋሉ?</p>
+<img id="ONE" style="background: black; position: absolute; top: 27.5%; width: 15vh; height: 15vh;">
+<img id="TWO" style="background: black; position: absolute; top: 65%; width: 15vh; height: 15vh;">
+<img id="THREE" style="background: black; position: absolute; top: 103.5%; width: 15vh; height: 15vh;">
+<img id="FOUR" style="background: black; position: absolute; top: 136.5%; width: 15vh; height: 15vh;">
+<img id="FIVE" style="background: black; position: absolute; top: 172.5%; width: 15vh; height: 15vh;">
+<img id="SIX" style="background: black; position: absolute; top: 207.5%; width: 15vh; height: 15vh;">
+<p style="position: absolute; top: 15%; height: 2%;">አንደኛ ቀን</p>
+<form class="choose" style="border: solid; position: absolute; top: 22.5%; left: 17vh; height: 30%;">
+    <label><input type="radio" name="one" value="light">ብርሃን</label><br>
+    <label><input type="radio" name="one" value="man">የምድር አራዊት & ሰው</label><br>
+    <label><input type="radio" name="one" value="sky">ሰማይ</label><br>
+    <label><input type="radio" name="one" value="bird">የባህር አራዊት & ወፎች</label><br>
+    <label><input type="radio" name="one" value="plant">የብስ፣ ባህር & ዕፅዋት</label><br>
+    <label><input type="radio" name="one" value="sun">ፀሀይ፣ጨረቃ & ከዋክብት</label><br>
+</form>
+<p style="position: absolute; top: 50%; height: 2%;">ሁለተኛ ቀን</p>
+<form class="choose" style="border: solid; position: absolute; top: 57.5%; left: 17vh; height: 30%;">
+    <label><input type="radio" name="two" value="light">ብርሃን</label><br>
+    <label><input type="radio" name="two" value="man">የምድር አራዊት & ሰው</label><br>
+    <label><input type="radio" name="two" value="sky">ሰማይ</label><br>
+    <label><input type="radio" name="two" value="bird">የባህር አራዊት & ወፎች</label><br>
+    <label><input type="radio" name="two" value="plant">የብስ፣ ባህር & ዕፅዋት</label><br>
+    <label><input type="radio" name="two" value="sun">ፀሀይ፣ጨረቃ & ከዋክብት</label><br>
+</form>
+<p style="position: absolute; top: 85%; height: 2%;">ሶስተኛ ቀን</p>
+<form class="choose" style="border: solid; position: absolute; top: 93%; left: 17vh; height: 30%;">
+    <label><input type="radio" name="three" value="light">ብርሃን</label><br>
+    <label><input type="radio" name="three" value="man">የምድር አራዊት & ሰው</label><br>
+    <label><input type="radio" name="three" value="sky">ሰማይ</label><br>
+    <label><input type="radio" name="three" value="bird">የባህር አራዊት & ወፎች</label><br>
+    <label><input type="radio" name="three" value="plant">የብስ፣ ባህር & ዕፅዋት</label><br>
+    <label><input type="radio" name="three" value="sun">ፀሀይ፣ጨረቃ & ከዋክብት</label><br>
+</form>
+<p style="position: absolute; top: 121%; height: 2%;">አራተኛ ቀን</p>
+<form class="choose" style="border: solid; position: absolute; top: 129%; left: 17vh; height: 30%;">
+    <label><input type="radio" name="four" value="light">ብርሃን</label><br>
+    <label><input type="radio" name="four" value="man">የምድር አራዊት & ሰው</label><br>
+    <label><input type="radio" name="four" value="sky">ሰማይ</label><br>
+    <label><input type="radio" name="four" value="bird">የባህር አራዊት & ወፎች</label><br>
+    <label><input type="radio" name="four" value="plant">የብስ፣ ባህር & ዕፅዋት</label><br>
+    <label><input type="radio" name="four" value="sun">ፀሀይ፣ጨረቃ & ከዋክብት</label><br>
+</form>
+<p style="position: absolute; top: 157%; height: 2%;">አምስተኛ ቀን</p>
+<form class="choose" style="border: solid; position: absolute; top: 165%; left: 17vh; height: 30%;">
+    <label><input type="radio" name="five" value="light">ብርሃን</label><br>
+    <label><input type="radio" name="five" value="man">የምድር አራዊት & ሰው</label><br>
+    <label><input type="radio" name="five" value="sky">ሰማይ</label><br>
+    <label><input type="radio" name="five" value="bird">የባህር አራዊት & ወፎች</label><br>
+    <label><input type="radio" name="five" value="plant">የብስ፣ ባህር & ዕፅዋት</label><br>
+    <label><input type="radio" name="five" value="sun">ፀሀይ፣ጨረቃ & ከዋክብት</label><br>
+</form>
+<p style="position: absolute; top: 193%; height: 2%;">ስድስተኛ ቀን</p>
+<form class="choose" style="border: solid; position: absolute; top: 200%; left: 17vh; height: 30%;">
+    <label><input type="radio" name="six" value="light">ብርሃን</label><br>
+    <label><input type="radio" name="six" value="man">የምድር አራዊት & ሰው</label><br>
+    <label><input type="radio" name="six" value="sky">ሰማይ</label><br>
+    <label><input type="radio" name="six" value="bird">የባህር አራዊት & ወፎች</label><br>
+    <label><input type="radio" name="six" value="plant">የብስ፣ ባህር & ዕፅዋት</label><br>
+    <label><input type="radio" name="six" value="sun">ፀሀይ፣ጨረቃ & ከዋክብት</label><br>
+</form>
+<div id="Alert" style="background: white; box-shadow: 0 0 10px gray; position: fixed; top: 10%; left: 10%; overflow: auto; z-index: 2000;"></div>`
+        }let remainingTime=149
+        let timer=setInterval(function(){
+            let minute=Math.floor(remainingTime/60)
+            document.getElementById("minute").innerHTML=minute
+            document.getElementById("second").innerHTML=remainingTime-minute*60
+            if (remainingTime-minute*60<10){
+                document.getElementById("second").innerHTML="0".concat(String(remainingTime-minute*60))
+            }remainingTime-=1
+            if (remainingTime<0){
+                clearInterval(timer)
+            }
+        },1000)
+        let end=setTimeout(function(){
+            TimeOut=true
+            clearTimeout(end)
+        },150000)
+        let answers=new Map([
+            ["one",null],
+            ["two",null],
+            ["three",null],
+            ["four",null],
+            ["five",null],
+            ["six",null]
+        ])
+        for (const choose of document.querySelectorAll(".choose")){
+            choose.addEventListener("change",function(event){
+                answers.set(event.target.name,event.target.value)
+                let image=document.getElementById(event.target.name.toUpperCase())
+                if (event.target.value=="light"){
+                    image.setAttribute("src",one)
+                }else if (event.target.value=="sky"){
+                    image.setAttribute("src",two)
+                }else if (event.target.value=="plant"){
+                    image.setAttribute("src",three)
+                }else if (event.target.value=="sun"){
+                    image.setAttribute("src",four)
+                }else if (event.target.value=="bird"){
+                    image.setAttribute("src",five)
+                }else if (event.target.value=="man"){
+                    image.setAttribute("src",six)
+                }
+            })
+        }let Alert=document.getElementById("Alert")
+        let help=document.getElementById("help")
+        help.addEventListener("click",function(){
+            Alert.style.width="80vw"
+            Alert.style.height="80vh"
+            Alert.innerHTML="<p style='color: red;'>Genesis 1</p><hr><p>[1] In the beginning God created the heavens and the earth. [2] Now the earth was formless and empty, darkness was over the surface of the deep, and the Spirit of God was hovering over the waters. [3] And God said, “Let there be light,” and there was light. [4] God saw that the light was good, and he separated the light from the darkness. [5] God called the light “day,” and the darkness he called “night.” And there was evening, and there was morning—the first day. <hr>[6] And God said, “Let there be a vault between the waters to separate water from water.” [7] So God made the vault and separated the water under the vault from the water above it. And it was so. [8] God called the vault “sky.” And there was evening, and there was morning—the second day. <hr>[9] And God said, “Let the water under the sky be gathered to one place, and let dry ground appear.” And it was so. [10] God called the dry ground “land,” and the gathered waters he called “seas.” And God saw that it was good. [11] Then God said, “Let the land produce vegetation: seed-bearing plants and trees on the land that bear fruit with seed in it, according to their various kinds.” And it was so. [12] The land produced vegetation: plants bearing seed according to their kinds and trees bearing fruit with seed in it according to their kinds. And God saw that it was good. [13] And there was evening, and there was morning—the third day.<hr> [14] And God said, “Let there be lights in the vault of the sky to separate the day from the night, and let them serve as signs to mark sacred times, and days and years, [15] and let them be lights in the vault of the sky to give light on the earth.” And it was so. [16] God made two great lights—the greater light to govern the day and the lesser light to govern the night. He also made the stars. [17] God set them in the vault of the sky to give light on the earth, [18] to govern the day and the night, and to separate light from darkness. And God saw that it was good. [19] And there was evening, and there was morning—the fourth day.<hr> [20] And God said, “Let the water teem with living creatures, and let birds fly above the earth across the vault of the sky.” [21] So God created the great creatures of the sea and every living thing with which the water teems and that moves about in it, according to their kinds, and every winged bird according to its kind. And God saw that it was good. [22] God blessed them and said, “Be fruitful and increase in number and fill the water in the seas, and let the birds increase on the earth.” [23] And there was evening, and there was morning—the fifth day.<hr> [24] And God said, “Let the land produce living creatures according to their kinds: the livestock, the creatures that move along the ground, and the wild animals, each according to its kind.” And it was so. [25] God made the wild animals according to their kinds, the livestock according to their kinds, and all the creatures that move along the ground according to their kinds. And God saw that it was good. [26] Then God said, “Let us make mankind in our image, in our likeness, so that they may rule over the fish in the sea and the birds in the sky, over the livestock and all the wild animals, and over all the creatures that move along the ground.” [27] So God created mankind in his own image, in the image of God he created them; male and female he created them. [28] God blessed them and said to them, “Be fruitful and increase in number; fill the earth and subdue it. Rule over the fish in the sea and the birds in the sky and over every living creature that moves on the ground.” [29] Then God said, “I give you every seed-bearing plant on the face of the whole earth and every tree that has fruit with seed in it. They will be yours for food. [30] And to all the beasts of the earth and all the birds in the sky and all the creatures that move along the ground—everything that has the breath of life in it—I give every green plant for food.” And it was so. [31] God saw all that he had made, and it was very good. And there was evening, and there was morning—the sixth day.</p>"
+            if (language=="amharic"){
+                Alert.innerHTML="<p style='color: red;'>ዘፍጥረት 1</p><hr><p>¹ በመጀመሪያ እግዚአብሔር ሰማይንና ምድርን ፈጠረ።² ምድርም ባዶ ነበረች፥ አንዳችም አልነበረባትም፤ ጨለማም በጥልቁ ላይ ነበረ፤ የእግዚአብሔርም መንፈስ በውኃ ላይ ሰፍፎ ነበር።³ እግዚአብሔርም፦ ብርሃን ይሁን አለ፤ ብርሃንም ሆነ።⁴ እግዚአብሔርም ብርሃኑ መልካም እንደ ሆነ አየ፥ እግዚአብሔርም ብርሃንንና ጨለማን ለየ።⁵ እግዚአብሔርም ብርሃኑን ቀን ብሎ ጠራው፥ ጨለማውንም ሌሊት አለው። ማታም ሆነ ጥዋትም ሆነ፥ አንድ ቀን።<hr>⁶ እግዚአብሔርም፦ በውኆች መካከል ጠፈር ይሁን፥ በውኃና በውኃ መካከልም ይክፈል አለ።⁷ እግዚአብሔርም ጠፈርን አደረገ፥ ከጠፈር በታችና ከጠፈር በላይ ያሉትንም ውኆች ለየ፤ እንዲሁም ሆነ።⁸ እግዚአብሔር ጠፈርን ሰማይ ብሎ ጠራው። ማታም ሆነ ጥዋትም ሆነ፥ ሁለተኛ ቀን።<hr>⁹ እግዚአብሔርም፦ ከሰማይ በታች ያለው ውኃ በአንድ ስፍራ ይሰብሰብ፥ የብሱም ይገለጥ አለ፤ እንዲሁም ሆነ።¹⁰ እግዚአብሔርም የብሱን ምድር ብሎ ጠራው የውኃ መከማቻውንም ባሕር አለው፤ እግዚአብሔርም ያ መልካም እንደ ሆነ አየ።¹¹ እግዚአብሔርም፦ ምድር ዘርን የሚሰጥ ሣርንና ቡቃያን በምድርም ላይ እንደ ወገኑ ዘሩ ያለበትን ፍሬን የሚያፈራ ዛፍን ታብቅል አለ፤ እንዲሁም ሆነ።¹² ምድርም ዘርን የሚሰጥ ሣርንና ቡቃያን እንደ ወገኑ ዘሩም ያለበትን ፍሬን የሚያፈራ ዛፍን እንደ ወገኑ አበቀለች። እግዚአብሔርም ያ መልካም እንደ ሆነ አየ።¹³ ማታም ሆነ ጥዋትም ሆነ፥ ሦስተኛ ቀን።<hr>¹⁴ እግዚአብሔርም አለ፦ ቀንና ሌሊትን ይለዩ ዘንድ ብርሃናት በሰማይ ጠፈር ይሁኑ ለምልክቶች ለዘመኖች ለዕለታት ለዓመታትም ይሁኑ፤¹⁵ በምድር ላይ ያበሩ ዘንድ በሰማይ ጠፈር ብርሃናት ይሁኑ፤ እንዲሁም ሆነ።¹⁶ እግዚአብሔርም ሁለት ታላላቆች ብርሃናትን አደረገ ትልቁ ብርሃን በቀን እንዲሠለጥን፥ ትንሹም ብርሃን በሌሊት እንዲሰለጥን ከዋክብትንም ደግሞ አደረገ።¹⁷ እግዚአብሔርም በምድር ላይ ያበሩ ዘንድ በሰማይ ጠፈር አኖራቸው፤¹⁸ በቀንም በሌሊትም እንዲሠለጥኑ፥ ብርሃንንና ጨለማንም እንዲለዩ፤ እግዚአብሔርም ያ መልካም እንደ ሆነ አየ።¹⁹ ማታም ሆነ ጥዋትም ሆነ፥ አራተኛ ቀን።<hr>²⁰ እግዚአብሔርም አለ፦ ውኃ ሕያው ነፍስ ያላቸውን ተንቀሳቃሾች ታስገኝ፥ ወፎችም ከምድር በላይ ከሰማይ ጠፈር በታች ይብረሩ።²¹ እግዚአብሔርም ታላላቆች አንበሪዎችን፥ ውኃይቱ እንደ ወገኑ ያስገኘቻቸውንም ተንቀሳቃሾቹን ሕያዋን ፍጥረታት ሁሉ፥ እንደ ወገኑ የሚበሩትንም ወፎች ሁሉ ፈጠረ፤ እግዚአብሔርም ያ መልካም እንደ ሆነ አየ።²² እግዚአብሔርም እንዲህ ብሎ ባረካቸው፦ ብዙ፥ ተባዙም፥ የባሕርንም ውኃ ሙሉአት፤ ወፎችም በምድር ላይ ይብዙ።²³ ማታም ሆነ ጥዋትም ሆነ፥ አምስተኛ ቀን።<hr>²⁴ እግዚአብሔርም አለ፦ ምድር ሕያዋን ፍጥረታትን እንደ ወገኑ፥ እንስሳትንና ተንቀሳቃሾችን የምድር አራዊትንም እንደ ወገኑ፥ ታውጣ፤ እንዲሁም ሆነ።²⁵ እግዚአብሔር የምድር አራዊትን እንደ ወገኑ አደረገ፥ እንስሳውንም እንደ ወገኑ፥ የመሬት ተንቀሳቃሾችንም እንደ ወገኑ አደረገ፤ እግዚአብሔርም ያ መልካም እንደ ሆነ አየ።²⁶ እግዚአብሔርም አለ፦ ሰውን በመልካችን እንደ ምሳሌአችን እንፍጠር፤ የባሕር ዓሦችንና የሰማይ ወፎችን፥ እንስሳትንና ምድርን ሁሉ፥ በምድር ላይ የሚንቀሳቀሱትንም ሁሉ ይግዙ።²⁷ እግዚአብሔርም ሰውን በመልኩ ፈጠረ፤ በእግዚአብሔር መልክ ፈጠረው፤ ወንድና ሴት አድርጎ ፈጠራቸው።²⁸ እግዚአብሔርም ባረካቸው፥ እንዲህም አላቸው፦ ብዙ፥ ተባዙ፥ ምድርንም ሙሉአት፥ ግዙአትም፤ የባሕርን ዓሦችና የሰማይን ወፎች በምድር ላይ የሚንቀሳቀሱትንም ሁሉ ግዙአቸው።²⁹ እግዚአብሔርም አለ፦ እነሆ መብል ይሆናችሁ ዘንድ በምድር ፊት ሁሉ ላይ ዘሩ በእርሱ ያለውን ሐመልማል ሁሉ፥ የዛፍን ፍሬ የሚያፈራውንና ዘር ያለውንም ዛፍ ሁሉ ሰጠኋችሁ፤³⁰ ለምድርም አራዊት ሁሉ፥ ለሰማይም ወፎች ሁሉ፥ ሕያው ነፍስ ላላቸው ለምድር ተንቀሳቃሾችም ሁሉ የሚበቅለው ሐመልማል ሁሉ መብል ይሁንላቸው፤ እንዲሁም ሆነ።³¹ እግዚአብሔርም ያደረገውን ሁሉ አየ፥ እነሆም እጅግ መልካም ነበረ። ማታም ሆነ ጥዋትም ሆነ፥ ስድስተኛ ቀን።</p>"
+            }Alert.addEventListener("click",function(){
+                    Alert.innerHTML=""
+                    Alert.style.width=""
+                    Alert.style.height=""
+            })
+        })
+        let check=setInterval(function(){
+            if (answers.get("one")=="light" && answers.get("two")=="sky" && answers.get("three")=="plant" && answers.get("four")=="sun" && answers.get("five")=="bird" && answers.get("six")=="man"){
+                win=true
+            }if (win || TimeOut){
+                if (win){
+                    Alert.innerHTML="<p style='font-size: 300%;'>You Win!!!</p>"
+                    if (language=="amharic"){
+                        Alert.innerHTML="<p style='font-size: 300%;'>አሸንፈዋል!!!</p>"
+                    }
+                }else if (TimeOut){
+                    Alert.innerHTML="<p style='font-size: 300%;'>Time Out</p>"
+                    if (language=="amharic"){
+                        Alert.innerHTML="<p style='font-size: 300%;'>ከበቂ በላይ ጊዜ ተጠቅመዋል።</p>"
+                    }
+                }clearTimeout(end)
+                clearInterval(timer)
+                clearInterval(check)
+                TimeOut=false
+                win=false
+                phaseTwo()
+            }
+        },1000)
+    }function phaseTwo(){
+        
+    }
+</script>
