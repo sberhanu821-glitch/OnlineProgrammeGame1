@@ -1,0 +1,642 @@
+<html id="space"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></html>
+<script src="resources1.js"></script>
+<script>
+    function wait(ms) {
+          return new Promise(resolve => setTimeout(resolve, ms));
+    }let TimeOut=false
+    let win
+    let language
+    let progress
+    let space=document.getElementById("space")
+    space.style.backgroundColor="black"
+    space.innerHTML="<div style='color: white; position: absolute; top: 30%; text-align: center; font-size: 150%;'><p>Game prepared by</p><p>2018 EBENZER CHRISTIAN FELLOWSHIP</p><button id='start' style='font-size: 150%;'>Start Game</button></div>"
+    document.getElementById("start").addEventListener("click",async function(){
+        space.innerHTML=""
+        await wait(1000)
+        space.innerHTML="<head><meta name='viewport' content='width=device-width, initial-scale=1.0'><meta charset='UTF-8'></head><div style='position: absolute; top: 30%; font-size: 150%; color: white;'><p>In what language would you like to play?</p><button id='english' class='language' style='font-size: 150%'>English</button><br><br><button class='language' id='amharic' style='font-size: 150%;'>አማረኛ</button></div>"
+        for (const lang of document.querySelectorAll('.language')){
+            lang.addEventListener("click",async function(){
+                language=lang.getAttribute("id")
+                await wait(500)
+                if (language=='english'){
+                    space.innerHTML="<head><meta charset='UTF-8' ><meta name='viewport' content='width=device-width, initial-scale=1.0'></head><div id='phase' style='position: absolute; top: 30%; font-size: 150%; color: white; font-family: `Arial`, sans-serif;'><p>Phase One</p></div>"
+                }else if (language=='amharic'){
+                    space.innerHTML="<head><meta charset='UTF-8' ><meta name='viewport' content='width=device-width, initial-scale=1.0'></head><div id='phase' style='position: absolute; top: 30%; font-size: 150%; color: white; font-family: `Arial`, sans-serif;'><p>አንደኛ ደረጃ</p></div>"
+                }await wait(1500)
+                if (language=='english'){
+                   document.getElementById("phase").innerHTML=document.getElementById("phase").innerHTML.concat("<p>The creation of the world</p>")
+                }else if (language=='amharic'){
+                    document.getElementById("phase").innerHTML=document.getElementById("phase").innerHTML.concat("<p>የአለም መፈጠር</p>")
+                }await wait(1500)
+                phaseOne()
+            })
+        }
+    })
+    function phaseOne(){
+        progress="phaseOne"
+        space.style.backgroundColor="white"
+        
+        space.innerHTML=`
+        <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<h1 style="color: black; text-decoration: underline; font-size: 150%; position: absolute; top: 0%; height: 10%; text-align: center;">The Creation Of The World </h1>
+<p style="background: white; z-index: 1000; border: solid; position: fixed; top: 6%; font-size: 120%;"><a id="minute">0</a>:<a id="second">00</a></p>
+<p id="help" style="background: white; z-index: 1000; color: blue; text-decoration: underline; position: fixed; top: 6%; left: 75%;">Need Help?</p>
+<img id="ONE" style="background: black; position: absolute; top: 27.5%; width: 15vh; height: 15vh;">
+<img id="TWO" style="background: black; position: absolute; top: 65%; width: 15vh; height: 15vh;">
+<img id="THREE" style="background: black; position: absolute; top: 103.5%; width: 15vh; height: 15vh;">
+<img id="FOUR" style="background: black; position: absolute; top: 136.5%; width: 15vh; height: 15vh;">
+<img id="FIVE" style="background: black; position: absolute; top: 172.5%; width: 15vh; height: 15vh;">
+<img id="SIX" style="background: black; position: absolute; top: 207.5%; width: 15vh; height: 15vh;">
+<p style="position: absolute; top: 15%; height: 2%;">The First Day</p>
+<form class="choose" style="border: solid; position: absolute; top: 22.5%; left: 17vh; height: 30%;">
+    <label><input type="radio" name="one" value="light">Light</label><br>
+    <label><input type="radio" name="one" value="man">Land Animals & Man</label><br>
+    <label><input type="radio" name="one" value="sky">The Sky</label><br>
+    <label><input type="radio" name="one" value="bird">Sea Animals & Winged Creatures</label><br>
+    <label><input type="radio" name="one" value="plant">Land, Sea & Plants</label><br>
+    <label><input type="radio" name="one" value="sun">Sun, Moon & The Stars</label><br>
+</form>
+<p style="position: absolute; top: 50%; height: 2%;">The Second Day</p>
+<form class="choose" style="border: solid; position: absolute; top: 57.5%; left: 17vh; height: 30%;">
+    <label><input type="radio" name="two" value="light">Light</label><br>
+    <label><input type="radio" name="two" value="man">Land Animals & Man</label><br>
+    <label><input type="radio" name="two" value="sky">The Sky</label><br>
+    <label><input type="radio" name="two" value="bird">Sea Animals & Winged Creatures</label><br>
+    <label><input type="radio" name="two" value="plant">Land, Sea & Plants</label><br>
+    <label><input type="radio" name="two" value="sun">Sun, Moon & The Stars</label><br>
+</form>
+<p style="position: absolute; top: 85%; height: 2%;">The Third Day</p>
+<form class="choose" style="border: solid; position: absolute; top: 93%; left: 17vh; height: 30%;">
+    <label><input type="radio" name="three" value="light">Light</label><br>
+    <label><input type="radio" name="three" value="man">Land Animals & Man</label><br>
+    <label><input type="radio" name="three" value="sky">The Sky</label><br>
+    <label><input type="radio" name="three" value="bird">Sea Animals & Winged Creatures</label><br>
+    <label><input type="radio" name="three" value="plant">Land, Sea & Plants</label><br>
+    <label><input type="radio" name="three" value="sun">Sun, Moon & The Stars</label><br>
+</form>
+<p style="position: absolute; top: 121%; height: 2%;">The Fourth Day</p>
+<form class="choose" style="border: solid; position: absolute; top: 129%; left: 17vh; height: 30%;">
+    <label><input type="radio" name="four" value="light">Light</label><br>
+    <label><input type="radio" name="four" value="man">Land Animals & Man</label><br>
+    <label><input type="radio" name="four" value="sky">The Sky</label><br>
+    <label><input type="radio" name="four" value="bird">Sea Animals & Winged Creatures</label><br>
+    <label><input type="radio" name="four" value="plant">Land, Sea & Plants</label><br>
+    <label><input type="radio" name="four" value="sun">Sun, Moon & The Stars</label><br>
+</form>
+<p style="position: absolute; top: 157%; height: 2%;">The Fifth Day</p>
+<form class="choose" style="border: solid; position: absolute; top: 165%; left: 17vh; height: 30%;">
+    <label><input type="radio" name="five" value="light">Light</label><br>
+    <label><input type="radio" name="five" value="man">Land Animals & Man</label><br>
+    <label><input type="radio" name="five" value="sky">The Sky</label><br>
+    <label><input type="radio" name="five" value="bird">Sea Animals & Winged Creatures</label><br>
+    <label><input type="radio" name="five" value="plant">Land, Sea & Plants</label><br>
+    <label><input type="radio" name="five" value="sun">Sun, Moon & The Stars</label><br>
+</form>
+<p style="position: absolute; top: 193%; height: 2%;">The Sixth Day</p>
+<form class="choose" style="border: solid; position: absolute; top: 200%; left: 17vh; height: 30%;">
+    <label><input type="radio" name="six" value="light">Light</label><br>
+    <label><input type="radio" name="six" value="man">Land Animals & Man</label><br>
+    <label><input type="radio" name="six" value="sky">The Sky</label><br>
+    <label><input type="radio" name="six" value="bird">Sea Animals & Winged Creatures</label><br>
+    <label><input type="radio" name="six" value="plant">Land, Sea & Plants</label><br>
+    <label><input type="radio" name="six" value="sun">Sun, Moon & The Stars</label><br>
+</form>
+<div id="Alert" style="background: white; box-shadow: 0 0 10px gray; position: fixed; z-index: 1000; top: 10vh; left: 10vw; overflow: auto;"></div>`
+        if (language=="amharic"){
+            space.innerHTML=`
+            <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<h1 style="color: black; text-decoration: underline; font-size: 150%; position: absolute; top: 0%; height: 10%; text-align: center;">የአለም አፈጣጠር</h1>
+<p style="background: white; z-index: 1000; border: solid; position: fixed; top: 6%; font-size: 120%;"><a id="minute">0</a>:<a id="second">00</a></p>
+<p id="help" style="background: white; z-index: 1000; color: blue; text-decoration: underline; position: fixed; top: 6%; left: 75%;">ፍንጭ ይፈልጋሉ?</p>
+<img id="ONE" style="background: black; position: absolute; top: 27.5%; width: 15vh; height: 15vh;">
+<img id="TWO" style="background: black; position: absolute; top: 65%; width: 15vh; height: 15vh;">
+<img id="THREE" style="background: black; position: absolute; top: 103.5%; width: 15vh; height: 15vh;">
+<img id="FOUR" style="background: black; position: absolute; top: 136.5%; width: 15vh; height: 15vh;">
+<img id="FIVE" style="background: black; position: absolute; top: 172.5%; width: 15vh; height: 15vh;">
+<img id="SIX" style="background: black; position: absolute; top: 207.5%; width: 15vh; height: 15vh;">
+<p style="position: absolute; top: 15%; height: 2%;">አንደኛ ቀን</p>
+<form class="choose" style="border: solid; position: absolute; top: 22.5%; left: 17vh; height: 30%;">
+    <label><input type="radio" name="one" value="light">ብርሃን</label><br>
+    <label><input type="radio" name="one" value="man">የምድር አራዊት & ሰው</label><br>
+    <label><input type="radio" name="one" value="sky">ሰማይ</label><br>
+    <label><input type="radio" name="one" value="bird">የባህር አራዊት & ወፎች</label><br>
+    <label><input type="radio" name="one" value="plant">የብስ፣ ባህር & ዕፅዋት</label><br>
+    <label><input type="radio" name="one" value="sun">ፀሀይ፣ጨረቃ & ከዋክብት</label><br>
+</form>
+<p style="position: absolute; top: 50%; height: 2%;">ሁለተኛ ቀን</p>
+<form class="choose" style="border: solid; position: absolute; top: 57.5%; left: 17vh; height: 30%;">
+    <label><input type="radio" name="two" value="light">ብርሃን</label><br>
+    <label><input type="radio" name="two" value="man">የምድር አራዊት & ሰው</label><br>
+    <label><input type="radio" name="two" value="sky">ሰማይ</label><br>
+    <label><input type="radio" name="two" value="bird">የባህር አራዊት & ወፎች</label><br>
+    <label><input type="radio" name="two" value="plant">የብስ፣ ባህር & ዕፅዋት</label><br>
+    <label><input type="radio" name="two" value="sun">ፀሀይ፣ጨረቃ & ከዋክብት</label><br>
+</form>
+<p style="position: absolute; top: 85%; height: 2%;">ሶስተኛ ቀን</p>
+<form class="choose" style="border: solid; position: absolute; top: 93%; left: 17vh; height: 30%;">
+    <label><input type="radio" name="three" value="light">ብርሃን</label><br>
+    <label><input type="radio" name="three" value="man">የምድር አራዊት & ሰው</label><br>
+    <label><input type="radio" name="three" value="sky">ሰማይ</label><br>
+    <label><input type="radio" name="three" value="bird">የባህር አራዊት & ወፎች</label><br>
+    <label><input type="radio" name="three" value="plant">የብስ፣ ባህር & ዕፅዋት</label><br>
+    <label><input type="radio" name="three" value="sun">ፀሀይ፣ጨረቃ & ከዋክብት</label><br>
+</form>
+<p style="position: absolute; top: 121%; height: 2%;">አራተኛ ቀን</p>
+<form class="choose" style="border: solid; position: absolute; top: 129%; left: 17vh; height: 30%;">
+    <label><input type="radio" name="four" value="light">ብርሃን</label><br>
+    <label><input type="radio" name="four" value="man">የምድር አራዊት & ሰው</label><br>
+    <label><input type="radio" name="four" value="sky">ሰማይ</label><br>
+    <label><input type="radio" name="four" value="bird">የባህር አራዊት & ወፎች</label><br>
+    <label><input type="radio" name="four" value="plant">የብስ፣ ባህር & ዕፅዋት</label><br>
+    <label><input type="radio" name="four" value="sun">ፀሀይ፣ጨረቃ & ከዋክብት</label><br>
+</form>
+<p style="position: absolute; top: 157%; height: 2%;">አምስተኛ ቀን</p>
+<form class="choose" style="border: solid; position: absolute; top: 165%; left: 17vh; height: 30%;">
+    <label><input type="radio" name="five" value="light">ብርሃን</label><br>
+    <label><input type="radio" name="five" value="man">የምድር አራዊት & ሰው</label><br>
+    <label><input type="radio" name="five" value="sky">ሰማይ</label><br>
+    <label><input type="radio" name="five" value="bird">የባህር አራዊት & ወፎች</label><br>
+    <label><input type="radio" name="five" value="plant">የብስ፣ ባህር & ዕፅዋት</label><br>
+    <label><input type="radio" name="five" value="sun">ፀሀይ፣ጨረቃ & ከዋክብት</label><br>
+</form>
+<p style="position: absolute; top: 193%; height: 2%;">ስድስተኛ ቀን</p>
+<form class="choose" style="border: solid; position: absolute; top: 200%; left: 17vh; height: 30%;">
+    <label><input type="radio" name="six" value="light">ብርሃን</label><br>
+    <label><input type="radio" name="six" value="man">የምድር አራዊት & ሰው</label><br>
+    <label><input type="radio" name="six" value="sky">ሰማይ</label><br>
+    <label><input type="radio" name="six" value="bird">የባህር አራዊት & ወፎች</label><br>
+    <label><input type="radio" name="six" value="plant">የብስ፣ ባህር & ዕፅዋት</label><br>
+    <label><input type="radio" name="six" value="sun">ፀሀይ፣ጨረቃ & ከዋክብት</label><br>
+</form>
+<div id="Alert" style="background: white; box-shadow: 0 0 10px gray; position: fixed; top: 10%; left: 10%; overflow: auto; z-index: 2000;"></div>`
+        }let remainingTime=239
+        let timer=setInterval(function(){
+            let minute=Math.floor(remainingTime/60)
+            document.getElementById("minute").innerHTML=minute
+            document.getElementById("second").innerHTML=remainingTime-minute*60
+            if (remainingTime-minute*60<10){
+                document.getElementById("second").innerHTML="0".concat(String(remainingTime-minute*60))
+            }remainingTime-=1
+            if (remainingTime<0){
+                clearInterval(timer)
+            }
+        },1000)
+        let end=setTimeout(function(){
+            TimeOut=true
+        },150000)
+        let answers=new Map([
+            ["one",null],
+            ["two",null],
+            ["three",null],
+            ["four",null],
+            ["five",null],
+            ["six",null]
+        ])
+        for (const choose of document.querySelectorAll(".choose")){
+            choose.addEventListener("change",function(event){
+                answers.set(event.target.name,event.target.value)
+                let image=document.getElementById(event.target.name.toUpperCase())
+                if (event.target.value=="light"){
+                    image.setAttribute("src",one)
+                }else if (event.target.value=="sky"){
+                    image.setAttribute("src",two)
+                }else if (event.target.value=="plant"){
+                    image.setAttribute("src",three)
+                }else if (event.target.value=="sun"){
+                    image.setAttribute("src",four)
+                }else if (event.target.value=="bird"){
+                    image.setAttribute("src",five)
+                }else if (event.target.value=="man"){
+                    image.setAttribute("src",six)
+                }
+            })
+        }let Alert=document.getElementById("Alert")
+        let help=document.getElementById("help")
+        help.addEventListener("click",function(){
+            Alert.style.width="80vw"
+            Alert.style.height="80vh"
+            Alert.innerHTML="<p style='color: red;'>Genesis 1</p><hr><p>[1] In the beginning God created the heavens and the earth. [2] Now the earth was formless and empty, darkness was over the surface of the deep, and the Spirit of God was hovering over the waters. [3] And God said, “Let there be light,” and there was light. [4] God saw that the light was good, and he separated the light from the darkness. [5] God called the light “day,” and the darkness he called “night.” And there was evening, and there was morning—the first day. <hr>[6] And God said, “Let there be a vault between the waters to separate water from water.” [7] So God made the vault and separated the water under the vault from the water above it. And it was so. [8] God called the vault “sky.” And there was evening, and there was morning—the second day. <hr>[9] And God said, “Let the water under the sky be gathered to one place, and let dry ground appear.” And it was so. [10] God called the dry ground “land,” and the gathered waters he called “seas.” And God saw that it was good. [11] Then God said, “Let the land produce vegetation: seed-bearing plants and trees on the land that bear fruit with seed in it, according to their various kinds.” And it was so. [12] The land produced vegetation: plants bearing seed according to their kinds and trees bearing fruit with seed in it according to their kinds. And God saw that it was good. [13] And there was evening, and there was morning—the third day.<hr> [14] And God said, “Let there be lights in the vault of the sky to separate the day from the night, and let them serve as signs to mark sacred times, and days and years, [15] and let them be lights in the vault of the sky to give light on the earth.” And it was so. [16] God made two great lights—the greater light to govern the day and the lesser light to govern the night. He also made the stars. [17] God set them in the vault of the sky to give light on the earth, [18] to govern the day and the night, and to separate light from darkness. And God saw that it was good. [19] And there was evening, and there was morning—the fourth day.<hr> [20] And God said, “Let the water teem with living creatures, and let birds fly above the earth across the vault of the sky.” [21] So God created the great creatures of the sea and every living thing with which the water teems and that moves about in it, according to their kinds, and every winged bird according to its kind. And God saw that it was good. [22] God blessed them and said, “Be fruitful and increase in number and fill the water in the seas, and let the birds increase on the earth.” [23] And there was evening, and there was morning—the fifth day.<hr> [24] And God said, “Let the land produce living creatures according to their kinds: the livestock, the creatures that move along the ground, and the wild animals, each according to its kind.” And it was so. [25] God made the wild animals according to their kinds, the livestock according to their kinds, and all the creatures that move along the ground according to their kinds. And God saw that it was good. [26] Then God said, “Let us make mankind in our image, in our likeness, so that they may rule over the fish in the sea and the birds in the sky, over the livestock and all the wild animals, and over all the creatures that move along the ground.” [27] So God created mankind in his own image, in the image of God he created them; male and female he created them. [28] God blessed them and said to them, “Be fruitful and increase in number; fill the earth and subdue it. Rule over the fish in the sea and the birds in the sky and over every living creature that moves on the ground.” [29] Then God said, “I give you every seed-bearing plant on the face of the whole earth and every tree that has fruit with seed in it. They will be yours for food. [30] And to all the beasts of the earth and all the birds in the sky and all the creatures that move along the ground—everything that has the breath of life in it—I give every green plant for food.” And it was so. [31] God saw all that he had made, and it was very good. And there was evening, and there was morning—the sixth day.</p>"
+            if (language=="amharic"){
+                Alert.innerHTML="<p style='color: red;'>ዘፍጥረት 1</p><hr><p>¹ በመጀመሪያ እግዚአብሔር ሰማይንና ምድርን ፈጠረ።² ምድርም ባዶ ነበረች፥ አንዳችም አልነበረባትም፤ ጨለማም በጥልቁ ላይ ነበረ፤ የእግዚአብሔርም መንፈስ በውኃ ላይ ሰፍፎ ነበር።³ እግዚአብሔርም፦ ብርሃን ይሁን አለ፤ ብርሃንም ሆነ።⁴ እግዚአብሔርም ብርሃኑ መልካም እንደ ሆነ አየ፥ እግዚአብሔርም ብርሃንንና ጨለማን ለየ።⁵ እግዚአብሔርም ብርሃኑን ቀን ብሎ ጠራው፥ ጨለማውንም ሌሊት አለው። ማታም ሆነ ጥዋትም ሆነ፥ አንድ ቀን።<hr>⁶ እግዚአብሔርም፦ በውኆች መካከል ጠፈር ይሁን፥ በውኃና በውኃ መካከልም ይክፈል አለ።⁷ እግዚአብሔርም ጠፈርን አደረገ፥ ከጠፈር በታችና ከጠፈር በላይ ያሉትንም ውኆች ለየ፤ እንዲሁም ሆነ።⁸ እግዚአብሔር ጠፈርን ሰማይ ብሎ ጠራው። ማታም ሆነ ጥዋትም ሆነ፥ ሁለተኛ ቀን።<hr>⁹ እግዚአብሔርም፦ ከሰማይ በታች ያለው ውኃ በአንድ ስፍራ ይሰብሰብ፥ የብሱም ይገለጥ አለ፤ እንዲሁም ሆነ።¹⁰ እግዚአብሔርም የብሱን ምድር ብሎ ጠራው የውኃ መከማቻውንም ባሕር አለው፤ እግዚአብሔርም ያ መልካም እንደ ሆነ አየ።¹¹ እግዚአብሔርም፦ ምድር ዘርን የሚሰጥ ሣርንና ቡቃያን በምድርም ላይ እንደ ወገኑ ዘሩ ያለበትን ፍሬን የሚያፈራ ዛፍን ታብቅል አለ፤ እንዲሁም ሆነ።¹² ምድርም ዘርን የሚሰጥ ሣርንና ቡቃያን እንደ ወገኑ ዘሩም ያለበትን ፍሬን የሚያፈራ ዛፍን እንደ ወገኑ አበቀለች። እግዚአብሔርም ያ መልካም እንደ ሆነ አየ።¹³ ማታም ሆነ ጥዋትም ሆነ፥ ሦስተኛ ቀን።<hr>¹⁴ እግዚአብሔርም አለ፦ ቀንና ሌሊትን ይለዩ ዘንድ ብርሃናት በሰማይ ጠፈር ይሁኑ ለምልክቶች ለዘመኖች ለዕለታት ለዓመታትም ይሁኑ፤¹⁵ በምድር ላይ ያበሩ ዘንድ በሰማይ ጠፈር ብርሃናት ይሁኑ፤ እንዲሁም ሆነ።¹⁶ እግዚአብሔርም ሁለት ታላላቆች ብርሃናትን አደረገ ትልቁ ብርሃን በቀን እንዲሠለጥን፥ ትንሹም ብርሃን በሌሊት እንዲሰለጥን ከዋክብትንም ደግሞ አደረገ።¹⁷ እግዚአብሔርም በምድር ላይ ያበሩ ዘንድ በሰማይ ጠፈር አኖራቸው፤¹⁸ በቀንም በሌሊትም እንዲሠለጥኑ፥ ብርሃንንና ጨለማንም እንዲለዩ፤ እግዚአብሔርም ያ መልካም እንደ ሆነ አየ።¹⁹ ማታም ሆነ ጥዋትም ሆነ፥ አራተኛ ቀን።<hr>²⁰ እግዚአብሔርም አለ፦ ውኃ ሕያው ነፍስ ያላቸውን ተንቀሳቃሾች ታስገኝ፥ ወፎችም ከምድር በላይ ከሰማይ ጠፈር በታች ይብረሩ።²¹ እግዚአብሔርም ታላላቆች አንበሪዎችን፥ ውኃይቱ እንደ ወገኑ ያስገኘቻቸውንም ተንቀሳቃሾቹን ሕያዋን ፍጥረታት ሁሉ፥ እንደ ወገኑ የሚበሩትንም ወፎች ሁሉ ፈጠረ፤ እግዚአብሔርም ያ መልካም እንደ ሆነ አየ።²² እግዚአብሔርም እንዲህ ብሎ ባረካቸው፦ ብዙ፥ ተባዙም፥ የባሕርንም ውኃ ሙሉአት፤ ወፎችም በምድር ላይ ይብዙ።²³ ማታም ሆነ ጥዋትም ሆነ፥ አምስተኛ ቀን።<hr>²⁴ እግዚአብሔርም አለ፦ ምድር ሕያዋን ፍጥረታትን እንደ ወገኑ፥ እንስሳትንና ተንቀሳቃሾችን የምድር አራዊትንም እንደ ወገኑ፥ ታውጣ፤ እንዲሁም ሆነ።²⁵ እግዚአብሔር የምድር አራዊትን እንደ ወገኑ አደረገ፥ እንስሳውንም እንደ ወገኑ፥ የመሬት ተንቀሳቃሾችንም እንደ ወገኑ አደረገ፤ እግዚአብሔርም ያ መልካም እንደ ሆነ አየ።²⁶ እግዚአብሔርም አለ፦ ሰውን በመልካችን እንደ ምሳሌአችን እንፍጠር፤ የባሕር ዓሦችንና የሰማይ ወፎችን፥ እንስሳትንና ምድርን ሁሉ፥ በምድር ላይ የሚንቀሳቀሱትንም ሁሉ ይግዙ።²⁷ እግዚአብሔርም ሰውን በመልኩ ፈጠረ፤ በእግዚአብሔር መልክ ፈጠረው፤ ወንድና ሴት አድርጎ ፈጠራቸው።²⁸ እግዚአብሔርም ባረካቸው፥ እንዲህም አላቸው፦ ብዙ፥ ተባዙ፥ ምድርንም ሙሉአት፥ ግዙአትም፤ የባሕርን ዓሦችና የሰማይን ወፎች በምድር ላይ የሚንቀሳቀሱትንም ሁሉ ግዙአቸው።²⁹ እግዚአብሔርም አለ፦ እነሆ መብል ይሆናችሁ ዘንድ በምድር ፊት ሁሉ ላይ ዘሩ በእርሱ ያለውን ሐመልማል ሁሉ፥ የዛፍን ፍሬ የሚያፈራውንና ዘር ያለውንም ዛፍ ሁሉ ሰጠኋችሁ፤³⁰ ለምድርም አራዊት ሁሉ፥ ለሰማይም ወፎች ሁሉ፥ ሕያው ነፍስ ላላቸው ለምድር ተንቀሳቃሾችም ሁሉ የሚበቅለው ሐመልማል ሁሉ መብል ይሁንላቸው፤ እንዲሁም ሆነ።³¹ እግዚአብሔርም ያደረገውን ሁሉ አየ፥ እነሆም እጅግ መልካም ነበረ። ማታም ሆነ ጥዋትም ሆነ፥ ስድስተኛ ቀን።</p>"
+            }Alert.addEventListener("click",function(){
+                    Alert.innerHTML=""
+                    Alert.style.width=""
+                    Alert.style.height=""
+            })
+        })
+        let check=setInterval(async function(){
+            if (answers.get("one")=="light" && answers.get("two")=="sky" && answers.get("three")=="plant" && answers.get("four")=="sun" && answers.get("five")=="bird" && answers.get("six")=="man"){
+                win=true
+            }if (win || TimeOut){
+                if (win){
+                    Alert.innerHTML="<p style='font-size: 300%;'>You Win!!!</p>"
+                    if (language=="amharic"){
+                        Alert.innerHTML="<p style='font-size: 300%;'>አሸንፈዋል!!!</p>"
+                    }
+                }else if (TimeOut){
+                    Alert.innerHTML="<p style='font-size: 300%;'>Time Out</p>"
+                    if (language=="amharic"){
+                        Alert.innerHTML="<p style='font-size: 300%;'>ከበቂ በላይ ጊዜ ተጠቅመዋል።</p>"
+                    }
+                }clearTimeout(end)
+                clearInterval(timer)
+                clearInterval(check)
+                TimeOut=false
+                win=false
+                await wait(500)
+                space.style.backgroundColor="black"
+                if (language=='english'){
+                    space.innerHTML="<head><meta charset='UTF-8' ><meta name='viewport' content='width=device-width, initial-scale=1.0'></head><div id='phase' style='position: absolute; top: 30%; font-size: 150%; color: white; font-family: `Arial`, sans-serif;'><p>Phase Two</p></div>"
+                }else if (language=='amharic'){
+                    space.innerHTML="<head><meta charset='UTF-8' ><meta name='viewport' content='width=device-width, initial-scale=1.0'></head><div id='phase' style='position: absolute; top: 30%; font-size: 150%; color: white; font-family: `Arial`, sans-serif;'><p>ሁለተኛ ደረጃ</p></div>"
+                }await wait(1500)
+                if (language=='english'){
+                   document.getElementById("phase").innerHTML=document.getElementById("phase").innerHTML.concat("<p>Bible Couples</p>")
+                }else if (language=='amharic'){
+                    document.getElementById("phase").innerHTML=document.getElementById("phase").innerHTML.concat("<p>ከመፅሀፍ ቅዱስ ትዳሮች</p>")
+                }await wait(1500)
+                phaseTwo()
+            }
+        },1000)
+    }function phaseTwo(){
+        space.style.backgroundColor="white"
+        space.innerHTML=`<head><meta charset='UTF-8' ><meta name='viewport' content='width=device-width, initial-scale=1.0'></head>
+        <h1 id="heading" style="height: 10%; text-decoration: underline;">Bible Couples</h1>
+<div class="box" id="1" style="background: white; border: dashed; width: 9vh; height: 9%; position: absolute; top: 10%; left: 10%;"></div>
+<div class="box" id="2" style="background: white; border: dashed; width: 9vh; height: 9%; position: absolute; top: 21%; left: 10%;"></div>
+<div class="box" id="3" style="background: white; border: dashed; width: 9vh; height: 9%; position: absolute; top: 32%; left: 10%;"></div>
+<div class="box" id="4" style="background: white; border: dashed; width: 9vh; height: 9%; position: absolute; top: 43%; left: 10%;"></div>
+<div class="box" id="5" style="background: white; border: dashed; width: 9vh; height: 9%; position: absolute; top: 54%; left: 10%;"></div>
+<div class="box" id="6" style="background: white; border: dashed; width: 9vh; height: 9%; position: absolute; top: 65%; left: 10%;"></div>
+<div class="box" id="7" style="background: white; border: dashed; width: 9vh; height: 9%; position: absolute; top: 76%; left: 10%;"></div>
+<div class="box" id="8" style="background: white; border: dashed; width: 9vh; height: 9%; position: absolute; top: 87%; left: 10%;"></div>
+<img class="image" id="eve" style="width: 10vh; height: 10%; position: absolute; top: 10%; left: 45%;">
+<img class="image" id="esther" style="width: 10vh; height: 10%; position: absolute; top: 21%; left: 45%;">
+<img class="image" id="sarah" style="width: 10vh; height: 10%; position: absolute; top: 32%; left: 45%;">
+<img class="image" id="mary" style="width: 10vh; height: 10%; position: absolute; top: 43%; left: 45%;">
+<img class="image" id="abigail" style="width: 10vh; height: 10%; position: absolute; top: 54%; left: 45%;">
+<img class="image" id="rebecca" style="width: 10vh; height: 10%; position: absolute; top: 65%; left: 45%;">
+<img class="image" id="ruth" style="width: 10vh; height: 10%; position: absolute; top: 76%; left: 45%;">
+<img class="image" id="rachel" style="width: 10vh; height: 10%; position: absolute; top: 87%; left: 45%;">
+<img class="image" id="adam" style="width: 10vh; height: 10%; position: absolute; top: 0%; right: 0vh;">
+<img class="image" id="abraham" style="width: 10vh; height: 10%; position: absolute; top: 12.5%; right: 0vh;">
+<img class="image" id="isaac" style="width: 10vh; height: 10%; position: absolute; top: 25%; right: 0vh;">
+<img class="image" id="jacob" style="width: 10vh; height: 10%; position: absolute; top: 37.5%; right: 0vh;">
+<img class="image" id="boaz" style="width: 10vh; height: 10%; position: absolute; top: 50%; right: 0vh;">
+<img class="image" id="david" style="width: 10vh; height: 10%; position: absolute; top: 62.5%; right: 0vh;">
+<img class="image" id="artexexes" style="width: 10vh; height: 10%; position: absolute; top: 75%; right: 0vh;">
+<img class="image" id="joseph" style="width: 10vh; height: 10%; position: absolute; top: 87.5%; right: 0vh;">
+<p id="timer" style="border: solid; position: absolute; top: 5%;"><a id="minute">0</a>:<a id="second">00</a></p>
+<p id="guide" style="color: blue; text-decoration: underline; position: absolute; top: 94%;">Guide</p>
+<p id="help" style="color: blue; text-decoration: underline; position: absolute; top: 94%; left: 45%;">Need Help?</p>
+<div id="Alert" style="background: white; box-shadow: 0 0 10px gray; position: fixed; top: 10%; left: 10%; overflow: auto; z-index: 2000;"></div>`
+        if (language=="amharic"){
+            document.getElementById("heading").innerHTML="ከመፅሀፍ ቅድስ ትዳሮች"
+            document.getElementById("heading").style.fontSize="125%"
+            document.getElementById("guide").innerHTML="መመሪያ"
+            document.getElementById("help").innerHTML="ፍንጭ ይፈልጋሉ?"
+        }document.getElementById("timer").style.left=parseFloat(window.innerWidth)*0.47+parseFloat(window.innerHeight)*0.1
+        document.getElementById("adam").setAttribute("src",adam)
+        document.getElementById("eve").setAttribute("src",eve)
+        document.getElementById("abraham").setAttribute("src",abraham)
+        document.getElementById("sarah").setAttribute("src",sarah)
+        document.getElementById("isaac").setAttribute("src",isaac)
+        document.getElementById("rebecca").setAttribute("src",rebecca)
+        document.getElementById("jacob").setAttribute("src",jacob)
+        document.getElementById("rachel").setAttribute("src",rachel)
+        document.getElementById("boaz").setAttribute("src",boaz)
+        document.getElementById("ruth").setAttribute("src",ruth)
+        document.getElementById("david").setAttribute("src",david)
+        document.getElementById("abigail").setAttribute("src",abigail)
+        document.getElementById("artexexes").setAttribute("src",artexexes)
+        document.getElementById("esther").setAttribute("src",esther)
+        document.getElementById("joseph").setAttribute("src",joseph)
+        document.getElementById("mary").setAttribute("src",mary)
+        let Alert=document.getElementById("Alert")
+        Alert.addEventListener("click",function(){
+                    Alert.innerHTML=""
+                    Alert.style.width=""
+                    Alert.style.height=""
+        })
+        let beingDragged
+        let original=new Map()
+        let answers=new Map()
+        for (const image of document.getElementsByClassName("image")){
+            image.addEventListener("click",function(){
+                Alert.innerHTML="<img style='height: 100%; width: 100%;' src='"+image.getAttribute("src")+"'>"
+                Alert.style.width="80%"
+                Alert.style.height="80%"
+                let name=document.createElement('p')
+                name.innerHTML=image.getAttribute("id").charAt(0).toUpperCase().concat(image.getAttribute("id").slice(1,image.getAttribute("id").length))
+                if (language=="amharic"){
+                    if (name.innerHTML=="Adam") name.innerHTML="አዳም"
+                    if (name.innerHTML=="Abraham") name.innerHTML="አብርሃም"
+                    if (name.innerHTML=="Isaac") name.innerHTML="ይስሐቅ"
+                    if (name.innerHTML=="Jacob") name.innerHTML="ያዕቆብ"
+                    if (name.innerHTML=="Boaz") name.innerHTML="ቦዔዝ"
+                    if (name.innerHTML=="David") name.innerHTML="ዳዊት"
+                    if (name.innerHTML=="Artexexes") name.innerHTML="አርጤክስስ"
+                    if (name.innerHTML=="Joseph") name.innerHTML="ዮሴፍ"
+                    if (name.innerHTML=="Eve") name.innerHTML="ሔዋን"
+                    if (name.innerHTML=="Sarah") name.innerHTML="ሣራ"
+                    if (name.innerHTML=="Rebecca") name.innerHTML="ርብቃ"
+                    if (name.innerHTML=="Rachel") name.innerHTML="ራሔል"
+                    if (name.innerHTML=="Ruth") name.innerHTML="ሩት"
+                    if (name.innerHTML=="Abigail") name.innerHTML="አቢግያ"
+                    if (name.innerHTML=="Esther") name.innerHTML="አስቴር"
+                    if (name.innerHTML=="Mary") name.innerHTML="ማርያም"
+                }if (name.innerHTML=="Artexexes") name.innerHTML="Xerxes"
+                Alert.appendChild(name)
+                name.style.position="absolute"
+                name.style.top="10%"
+                name.style.left="20%"
+                name.style.fontSize="200%"
+                name.style.color="blue"
+                
+            })
+            if (["adam","abraham","isaac","jacob","boaz","david","artexexes","joseph"].includes(image.getAttribute("id"))){
+                original.set(image,[image.style.top,image.style.left])
+            image.addEventListener("touchstart",function(){
+                beingDragged=image
+                if (answers.has(beingDragged)) answers.delete(beingDragged)
+            })
+            image.addEventListener("touchmove",function(event){
+                if (beingDragged){
+                    event.preventDefault()
+                    let touch=event.touches[0]
+                    let x=touch.clientX/parseFloat(window.innerWidth)*100
+                    let y=touch.clientY/parseFloat(window.innerHeight)*100
+                    beingDragged.style.top=y+"%"
+                    beingDragged.style.left=x+"%"
+                }
+            })
+            image.addEventListener("touchend",function(event){
+                if (beingDragged){
+                    let b=new Array()
+                    for (const id of answers.values()){
+                        b.push(id)
+                    }let a=false
+                    for (const box of document.querySelectorAll(".box")){
+                        if (Math.abs(parseFloat(box.style.top)-parseFloat(beingDragged.style.top))<=10 && Math.abs(parseFloat(box.style.left)-parseFloat(beingDragged.style.left))<=15 && !b.includes(box.getAttribute("id"))){
+                            beingDragged.style.top=box.style.top
+                            beingDragged.style.left=box.style.left
+                            answers.set(beingDragged,box.getAttribute("id"))
+                            a=true
+                            break
+                        }
+                    }if (!a){
+                        beingDragged.style.top=original.get(beingDragged)[0]
+                        beingDragged.style.left=original.get(beingDragged)[1]
+                    }
+                }
+            })
+            }
+        }let remainingTime=359
+        let timer=setInterval(function(){
+            let minute=Math.floor(remainingTime/60)
+            document.getElementById("minute").innerHTML=minute
+            document.getElementById("second").innerHTML=remainingTime-minute*60
+            if (remainingTime-minute*60<10){
+                document.getElementById("second").innerHTML="0".concat(String(remainingTime-minute*60))
+            }remainingTime-=1
+            if (remainingTime<0){
+                clearInterval(timer)
+            }
+        },1000)
+        let end=setTimeout(function(){
+            TimeOut=true
+        },360000)
+        let guide=document.getElementById("guide")
+        guide.addEventListener("click",function(){
+            Alert.style.width="80%"
+            Alert.innerHTML="<p style='color: red;'>Guide</p><hr><p>1. Click the images to know who they are.<br>2. Position the listed men from the bible next to their wives by dragging.</p>"
+            if (language=="amharic") Alert.innerHTML="<p style='color: red;'>መመሪያ</p><hr><p>1. ምስሎቹን በመንካት በምስሉ ላይ የሚታየውን ሰው ማንነት እወቁ።<br>2. ምስሎቹን በመጎተት ከመፅሀፍ ቅድስ የተቀመጡትን ባሎች ከሚስቶቻቸው ጎን አስቀምጧቸው።</p>"
+            
+        })
+        guide.dispatchEvent(new Event("click"))
+        let tip=document.getElementById("help")
+        tip.addEventListener("click",function(){
+            Alert.innerHTML=`<p style='color: red;'>‭Genesis 3:20</p><hr><p>ADAM named HIS WIFE EVE, because she would become the mother of all the living.</p><hr>
+                                            <p style='color: red;'>‭Genesis 17:15</p><hr><p>God also said to ABRAHAM, “As for SARAI YOUR WIFE, you are no longer to call her Sarai; her name will be SARAH.</p><hr>
+                                            <p style='color: red;'>‭Genesis 24:67</p><hr><p>ISAAC brought her into the tent of his mother Sarah, and HE MARRIED REBECCA. So she became his wife, and he loved her.....</p><hr>
+                                            <p style='color: red;'>‭Genesis 29:28</p><hr><p>...... HE[JACOB] finished the week with Leah, and then Laban GAVE HIM HIS DAUGHTER RACHEL TO BE HIS WIFE.</p><hr>
+                                            <p style='color: red;'>‭Ruth 4:13 </p><hr><p>SO BOAZ TOOK RUTH AND SHE BECAME HIS WIFE...........</p><hr>
+                                            <p style='color: red;'>‭1 Samuel 25:42</p><hr><p>ABIGAIL quickly got on a donkey and, attended by her five female servants, went with David’s messengers and BECAME HIS WIFE.</p><hr>
+                                            <p style='color: red;'>Esther 2:17 </p><hr><p>Now the king[Xerxes] was attracted to ESTHER more than to any of the other women,........ So he set a royal crown on her head and MADE HER QUEEN[AND HIS WIFE] instead of Vashti.</p><hr>
+                                            <p style='color: red;'>‭Matthew 1:24 </p><hr><p>When Joseph woke up, he did what the angel of the Lord had commanded him and took MARY TO HIS HOME AS HIS WIFE.</p>`
+             Alert.style.width="80%"
+             Alert.style.height="80%"
+             if (language=='amharic')  Alert.innerHTML=`<p style='color: red;'>‭ዘፍጥረት 3:20</p><hr><p><b>አዳምም ለሚስቱ ሔዋን</b> ብሎ ስም አወጣ፥ የሕያዋን ሁሉ እናት ናትና።</p><hr>
+                                            <p style='color: red;'>‭ዘፍጥረት 17:15</p><hr><p>እግዚአብሔርም አብርሃምን አለው፦<b> የሚስትህን የሦራን ስም ሦራ ብለህ አትጥራ፥</b> ስምዋ<b> ሣራ </b>ይሆናል እንጂ።</p><hr>
+                                            <p style='color: red;'>‭ዘፍጥረት 24:67</p><hr><p><b>ይስሐቅም ወደ እናቱ ወደ ሣራ ድንኳን አገባት፥ ርብቃንም ወሰዳት፥ ሚስትም ሆነችው፥</b> ወደዳትም፤ ይስሐቅም ከእናቱ ሞት ተጽናና።</p><hr>
+                                            <p style='color: red;'>ዘፍጥረት 29:28</p><hr><p><b>ያዕቆብም </b>እንዲህ አደረገ፥ ይህችንም ሳምንት ፈጸመ ልጁን<b> ራሔልንም ለእርሱ ሚስት ትሆን ዘንድ ሰጠው።</b></p><hr>
+                                            <p style='color: red;'>‭ሩት 4:13 </p><hr><p><b>ቦዔዝም ሩትን ወሰደ፥ ሚስትም ሆነችው፤</b> ደረሰባትም፥ እግዚአብሔርም ፅንስ ሰጣት፥ ወንድ ልጅም ወለደች።</p><hr>
+                                            <p style='color: red;'>‭1 ሳሙኤል 25:42</p><hr><p><b>አቢግያም</b> ፈጥና ተነሣች፤ በአህያም ላይ ተቀመጠች፥ አምስቱም ገረዶችዋ ተከተሉአት፤ የዳዊትንም መልእክተኞች ተከትላ ሄደች፥ <b>ሚስትም ሆነችው።</b></p><hr>
+                                            <p style='color: red;'>አስቴር 2:17 </p><hr><p><b>ንጉሡም[አርጤክስስ]</b> ከሴቶች ሁሉ ይልቅ አስቴርን ወደደ፥ በዓይኑም ከደናግል ሁሉ ይልቅ ሞገስንና መወደድን አገኘች፤ የመንግሥቱንም ዘውድ በራስዋ ላይ አደረገ፥<b>በአስጢንም ፋንታ አነገሣት[ሚስቱም አደረጋት]።</b></p><hr>
+                                            <p style='color: red;'>‭ማቴዎስ 1:24 </p><hr><p><b>ዮሴፍም </b>ከእንቅልፉ ነቅቶ የጌታ መልአክ እንዳዘዘው አደረገ፤ <b>እጮኛውንም[ማሪያምን] ወሰደ[አገባ]</b>፤</p>`
+        })
+        let win=false
+        let check=setInterval(async function(){
+            if (answers.get(document.getElementById("adam"))=="1" && answers.get(document.getElementById("abraham"))=="3" && answers.get(document.getElementById("isaac"))=="6" && answers.get(document.getElementById("jacob"))=="8" && answers.get(document.getElementById("boaz"))=="7" && answers.get(document.getElementById("david"))=="5" && answers.get(document.getElementById("artexexes"))=="2" && answers.get(document.getElementById("joseph"))=="4") win=true
+            if (win || TimeOut){
+                Alert.style.width="80%"
+                if (win){
+                    Alert.innerHTML="<p style='font-size: 300%;'>You Win!!!</p>"
+                    if (language=="amharic") Alert.innerHTML="<p style='font-size: 300%;'>አሸንፈዋል!!!</p>"
+                }else if (TimeOut){
+                    Alert.innerHTML="<p style='font-size: 300%;'>ከበቂ ጊዜ በላይ ተጠቅመዋል።</p>"
+                }clearInterval(timer)
+                clearTimeout(end)
+                clearInterval(check)
+                TimeOut=false
+                win=false
+                await wait(1000)
+                space.style.backgroundColor="black"
+                if (language=='english'){
+                    space.innerHTML="<head><meta charset='UTF-8' ><meta name='viewport' content='width=device-width, initial-scale=1.0'></head><div id='phase' style='position: absolute; top: 30%; font-size: 150%; color: white; font-family: `Arial`, sans-serif;'><p>Phase Three</p></div>"
+                }else if (language=='amharic'){
+                    space.innerHTML="<head><meta charset='UTF-8' ><meta name='viewport' content='width=device-width, initial-scale=1.0'></head><div id='phase' style='position: absolute; top: 30%; font-size: 150%; color: white; font-family: `Arial`, sans-serif;'><p>ሶስተኛ ደረጃ</p></div>"
+                }await wait(1500)
+                if (language=='english'){
+                   document.getElementById("phase").innerHTML=document.getElementById("phase").innerHTML.concat("<p>Moses's Tabernacle</p>")
+                }else if (language=='amharic'){
+                    document.getElementById("phase").innerHTML=document.getElementById("phase").innerHTML.concat("<p>የመገናኛው ድንኳን</p>")
+                }await wait(1500)
+                phaseThree()
+            }
+        },500)
+    }async function phaseThree(){
+        space.style.backgroundColor='white'
+        space.innerHTML=`<head><meta charset='UTF-8' ><meta name='viewport' content='width=device-width, initial-scale=1.0'></head>
+        <canvas id="canvas"></canvas>
+<h1 id="heading" style="text-decoration: underline; position: absolute; top: 0; left: 0;">Moses' Tabernacle</h1>
+<p id="holyholies" style="position: absolute; top: 10%; left: 20%;">Holy Of Holies</p>
+<p id="holy" style="position: absolute; top: 35%; left: 20%;">Holy Place</p>
+<img id="compass" style="position: absolute; top: 75%; left: 75%; width: 20%; height: 20%;"></img>
+<img class="box" id="1" style="position: absolute; left: 36%; top: 17%; width: 23%; height: 7%; background: white; border: dashed;"></img>
+<select class="choose" name="1" style="position: absolute; left: 36%; top: 25%; width: 23%;">
+    <option value="covenantBox">Covenant Box</option>
+    <option value="tableShewbread">Table of Shewbread</option>
+    <option value="goldenAltar">Golden Altar</option>
+    <option value="lampstand">Lampstand</option>
+    <option value="laver">Washing Basin</option>
+    <option value="bronzeAltar">Bronze Altar</option>
+</select>
+<img class="box" id="2" style="background: white; position: absolute; left: 18%; top: 43%; width: 17%; height: 13%; border: dashed;"></img>
+<select class="choose" name="2" style="position: absolute; left: 18%; top: 57%; width: 17%;">
+    <option value="covenantBox">Covenant Box</option>
+    <option value="tableShewbread">Table of Shewbread</option>
+    <option value="goldenAltar">Golden Altar</option>
+    <option value="lampstand">Lampstand</option>
+    <option value="laver">Washing Basin</option>
+    <option value="bronzeAltar">Bronze Altar</option>
+</select>
+<img class="box" id="3" style="background: white; position: absolute; left: 40%; top: 43%; width: 17%; height: 13%; border: dashed;"></img>
+<select class="choose" name="3" style="position: absolute; left: 40%; top: 57%; width: 17%;">
+    <option value="covenantBox">Covenant Box</option>
+    <option value="tableShewbread">Table of Shewbread</option>
+    <option value="goldenAltar">Golden Altar</option>
+    <option value="lampstand">Lampstand</option>
+    <option value="laver">Washing Basin</option>
+    <option value="bronzeAltar">Bronze Altar</option>
+</select>
+<img class="box" id="4" style="background: white; position: absolute; left: 62%; top: 43%; width: 17%; height: 13%; border: dashed;"></img>
+<select class="choose" name="4" style="position: absolute; left: 62%; top: 57%; width: 17%;">
+    <option value="covenantBox">Covenant Box</option>
+    <option value="tableShewbread">Table of Shewbread</option>
+    <option value="goldenAltar">Golden Altar</option>
+    <option value="lampstand">Lampstand</option>
+    <option value="laver">Washing Basin</option>
+    <option value="bronzeAltar">Bronze Altar</option>
+</select>
+<img class="box" id="5" style="background: white; position: absolute; left: 36%; top: 67%; width: 23%; height: 10%; border: dashed;"></img>
+<select class="choose" name="5" style="position: absolute; left: 36%; top: 78%; width: 23%;">
+    <option value="covenantBox">Covenant Box</option>
+    <option value="tableShewbread">Table of Shewbread</option>
+    <option value="goldenAltar">Golden Altar</option>
+    <option value="lampstand">Lampstand</option>
+    <option value="laver">Washing Basin</option>
+    <option value="bronzeAltar">Bronze Altar</option>
+</select>
+<img class="box" id="6" style="background: white; position: absolute; left: 36%; top: 82%; width: 23%; height: 10%; border: dashed;"></img>
+<select  class="choose" name="6" style="position: absolute; left: 36%; top: 93%; width: 23%;">
+    <option value="covenantBox">Covenant Box</option>
+    <option value="tableShewbread">Table of Shewbread</option>
+    <option value="goldenAltar">Golden Altar</option>
+    <option value="lampstand">Lampstand</option>
+    <option value="laver">Washing Basin</option>
+    <option value="bronzeAltar">Bronze Altar</option>
+</select>
+<p style="border: solid; position: absolute; top: 70%; "><a id="minute">0</a>:<a id="second">00</a></p>
+<p id="guide" style="color: blue; text-decoration: underline; position: absolute; top: 80%;">Guide</p>
+<p id="help" style="color: blue; text-decoration: underline; position: absolute; top: 90%;">Need Help?</p>
+<div id="Alert" style="background: white; box-shadow: 0 0 10px gray; position: fixed; top: 10%; left: 10%; overflow: auto; z-index: 2000;"></div>` 
+       document.getElementById("compass").setAttribute("src",compass)
+     if (language=="amharic"){ 
+            document.getElementById("heading").innerHTML="የመገናኛው ድንኳን"
+            document.getElementById("guide").innerHTML="መመሪያ"
+            document.getElementById("help").innerHTML="ፍንጭ ይፈልጋሉ?"
+            document.getElementById("holyholies").innerHTML="ቅድስተ ቅድሳን"
+            document.getElementById("holy").innerHTML="ቅድስ ክፍል"
+            for (const option of document.getElementsByTagName("option")){
+                if (option.getAttribute("value")=="covenantBox") option.innerHTML="የቃልኪዳኑ ታቦት"
+                if (option.getAttribute("value")=="tableShewbread") option.innerHTML="የኅብስቱ ጠረጴዛ"
+                if (option.getAttribute("value")=="lampstand") option.innerHTML="መቅረዝ"
+                if (option.getAttribute("value")=="goldenAltar") option.innerHTML="የወርቅ መሠውያ"
+                if (option.getAttribute("value")=="laver") option.innerHTML="የመታጠቢያ ሳህን"
+                if (option.getAttribute("value")=="bronzeAltar") option.innerHTML="የሚቃጠል መሠዋዕት መሠዊያ"
+            }
+        }function vhtopx(value){
+            return window.innerHeight*value/100
+        }function vwtopx(value){
+            return window.innerWidth*value/100
+        }let canvas=document.getElementById("canvas")
+        canvas.setAttribute("width",window.innerWidth)
+        canvas.setAttribute("height",window.innerHeight)
+        let ctx=canvas.getContext("2d")
+        ctx.fillStyle="black"
+        ctx.fillRect(vwtopx(10),vhtopx(10),vwtopx(2),vhtopx(55))
+        ctx.fillRect(vwtopx(80),vhtopx(10),vwtopx(2),vhtopx(55))
+        ctx.fillRect(vwtopx(10),vhtopx(10),vwtopx(70),vhtopx(1))
+        ctx.fillStyle="red"
+        ctx.fillRect(vwtopx(10),vhtopx(30),vwtopx(70),vhtopx(1))
+        ctx.fillStyle="blue"
+        ctx.fillRect(vwtopx(10),vhtopx(65),vwtopx(70),vhtopx(1))
+        let remainingTime=479
+        let TimeOut=false
+        let end=setTimeout(function(){
+            TimeOut=true
+        },480000)
+        let timer=setInterval(function(){
+            let minute=Math.floor(remainingTime/60)
+            document.getElementById("minute").innerHTML=minute
+            document.getElementById("second").innerHTML=remainingTime-minute*60
+            if (remainingTime-minute*60<10){
+                document.getElementById("second").innerHTML="0".concat(String(remainingTime-minute*60))
+            }remainingTime-=1
+            if (remainingTime<0){
+                clearInterval(timer)
+            }
+        },1000)
+        let Alert=document.getElementById("Alert")
+        Alert.addEventListener("click",function(){
+                    Alert.innerHTML=""
+                    Alert.style.width=""
+                    Alert.style.height=""
+        })
+        let guide=document.getElementById("guide")
+        guide.addEventListener("click",function(){
+            Alert.style.width="80%"
+            Alert.innerHTML="<p style='color: red;'>Guide</p><hr><p>1. Click the options from below the boxes to position tabernacle items.<br>2. Place tabernacle items as mentioned in the bible.</p>"
+            if (language=="amharic") Alert.innerHTML="<p style='color: red;'>መመሪያ</p><hr><p>1. ከሳጥኖቹ ስር ያሉትን ምርጫዎች በመንካት የድንኳኑን ዕቃዎች አስቀምጡ።<br>2. የድንኳኑን ዕቃዎች መፅሀፍ ቅድስ ላይ እንደተፃፈው አስቀምጡ።</p>"
+            
+        })
+        let help=document.getElementById("help")
+        help.addEventListener("click",function(){
+            Alert.style.width="80%"
+            Alert.style.height="80%"
+            Alert.innerHTML='<p style="color: red;">Exo. 40</p><hr><p>‭[21] Then he brought the COVENANT BOX into the tabernacle and hung the shielding curtain[INSIDE THE HOLY OF HOLIES] and shielded the ark of the covenant law, as the Lord commanded him. [22] Moses placed the TABLE [OF SHEWBREAD]  in the tent of meeting on the NORTH side of the tabernacle outside the curtain[IN THE HOLY PLACE][24] He placed the LAMPSTAND in the tent of meeting opposite the table on the SOUTH side of the tabernacle[IN THE HOLY PLACE][26] Moses placed the GOLDEN ALTAR in the tent of meeting in front of the curtain [IN THE CENTER] [29] He set THE ALTAR OF BURNT OFFERING near the entrance to the tabernacle, the tent of meeting, and offered on it burnt offerings and grain offerings, as the Lord commanded him. [30] He placed the WASHING BASIN BETWEEN THE ALTAR AND THE TENT OF MEETING and put water in it for washing, </p>'
+            if (language=="amharic"){
+                 Alert.innerHTML='<p style="color: red;">ዘጸአት 40</p><hr><p>²¹ <b>ታቦቱን ወደ ማደሪያው አገባ፥ የሚሸፍነውንም መጋረጃ አድርጎ[በቅድስተ ቅድሳን]</b> የምስክሩን ታቦት ሸፈነ።²² እግዚአብሔርም ሙሴን እንዳዘዘው <b>ጠረጴዛውን በመገናኛው ድንኳን ውስጥ፥ ከመጋረጃው ውጭ[በቅድሱ ክፍል]፥</b> በማደሪያው <b>በሰሜን በኩል</b> አኖረው፤²⁴ እግዚአብሔርም ሙሴን እንዳዘዘው <b>መቅረዙን በመገናኛው ድንኳን ውስጥ፥ በጠረጴዛው ፊት ለፊት፥ በማደሪያው በደቡብ በኩል</b> አኖረ፤²⁶ እግዚአብሔርም ሙሴን እንዳዘዘው <b>የወርቁን መሠዊያ በመገናኛው ድንኳን ውስጥ በመጋረጃው ፊት አኖረ፤</b>²⁹ <b>ለሚቃጠል መሥዋዕት የሚሆነውን መሠዊያ በመገናኛው ድንኳን በማደሪያው ደጅ ፊት አኖረ፥</b> የሚቃጠለውንና የእህልን መሥዋዕት ሠዋበት።³⁰ እግዚአብሔርም ሙሴን እንዳዘዘው <b>የመታጠቢያውን ሳህን በመገናኛው ድንኳንና በመሠዊያው መካከል አኖረ፥</b> ለመታጠቢያም ውኃን ጨመረበት።</p>'
+            }
+        })
+        for (const choose of document.querySelectorAll(".choose")){
+            choose.addEventListener("change",function(event){
+              
+                let relate=new Map([
+                ["covenantBox",covenant_box],
+                ["tableShewbread",table_of_shewbread],
+                ["lampstand",lampstand],
+                ["goldenAltar",golden_altar],
+                ["laver",laver],
+                ["bronzeAltar",bronze_altar]])
+           
+                document.getElementById(choose.getAttribute("name")).setAttribute("src",relate.get(String(event.target.value)))
+            })
+        }let win=false
+        let check=setInterval(function(){
+            if (document.getElementById("1").getAttribute("src")==covenant_box && document.getElementById("2").getAttribute("src")==table_of_shewbread && document.getElementById("3").getAttribute("src")==golden_altar && document.getElementById("4").getAttribute("src")==lampstand && document.getElementById("5").getAttribute("src")==laver && document.getElementById("6").getAttribute("src")==bronze_altar){
+                win=true
+            }if (win || TimeOut){
+                Alert.style.width="80%"
+                if (win){
+                    Alert.innerHTML="<p style='font-size: 300%;'>You Win!!!</p>"
+                    if (language=="amharic") Alert.innerHTML="<p style='font-size: 300%;'>አሸንፈዋል!!!</p>"
+                }else if (TimeOut){
+                    Alert.innerHTML="<p style='font-size: 300%;'>ከበቂ ጊዜ በላይ ተጠቅመዋል።</p>"
+                }clearInterval(timer)
+                clearTimeout(end)
+                clearInterval(check)
+                TimeOut=false
+                win=false
+                final()
+            }
+        },1000)
+    }async function final(){
+        await wait(1000)
+        space.innerHTML="<p>Eph. 3: 20-21<br>‭[20] Now to him who is able to do immeasurably more than all we ask or imagine, according to his power that is at work within us, [21] to him be glory in the church and in Christ Jesus throughout all generations, for ever and ever! Amen.<br>Post this verse to win!!</p>"
+        if (language=="amharic") space.innerHTML="<p>ኤፌ. 3:20-21<br>²⁰ እንግዲህ በእኛ እንደሚሠራው ኃይል መጠን ከምንለምነው ወይም ከምናስበው ሁሉ ይልቅ እጅግ አብልጦ ሊያደርግ ለሚቻለው፥²¹ ለእርሱ በቤተ ክርስቲያን በክርስቶስ ኢየሱስ እስከ ትውልዶች ሁሉ ከዘላለም እስከ ዘላለም ክብር ይሁን፤ አሜን።<br>ይሄን ጥቅስ ፓስት በማድረግ አሸንፉ።</p>"
+    }
+</script>
